@@ -6,50 +6,50 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AdviceManager {
-    //½«±»BeforeAdviceTestµÄpermissionCheck·½·¨Æ¥Åä
+    //å°†è¢«BeforeAdviceTestçš„permissionCheckæ–¹æ³•åŒ¹é…
     public void beforeAdvice() {
-        System.out.println("·½·¨: beforeAdviceTest");
+        System.out.println("æ–¹æ³•: beforeAdviceTest");
     }
     
-    //½«±»AfterReturningAdviceTestµÄlog·½·¨Æ¥Åä
+    //å°†è¢«AfterReturningAdviceTestçš„logæ–¹æ³•åŒ¹é…
     public String afterReturning() {
-        System.out.println("·½·¨£ºafterReturning");
-        return "afterReturning·½·¨";
+        System.out.println("æ–¹æ³•ï¼šafterReturning");
+        return "afterReturningæ–¹æ³•";
     }
     
-    //½«±»AfterThrowingAdviceTestµÄhandleException·½·¨Æ¥Åä
+    //å°†è¢«AfterThrowingAdviceTestçš„handleExceptionæ–¹æ³•åŒ¹é…
     @SuppressWarnings({ "null", "unused" })
     public void afterThrowing() {
-        System.out.println("·½·¨£º afterThrowing");
+        System.out.println("æ–¹æ³•ï¼š afterThrowing");
         try {
             int a = 10 / 0;
         } catch (ArithmeticException ae) {
-            System.out.println("ËãÊõÒì³£ÒÑ±»´¦Àí");
+            System.out.println("ç®—æœ¯å¼‚å¸¸å·²è¢«å¤„ç†");
         }
         String s = null;
         System.out.println(s.substring(0,3));
     }
     
-    //½«±»AfterAdviceµÄreleaseResource·½·¨Æ¥Åä
-    public void afterAdvice() {
-        System.out.println("·½·¨£º afterAdvice");
+    //å°†è¢«AfterAdviceçš„releaseResourceæ–¹æ³•åŒ¹é…
+    public void afterAdvice(String name) {
+        System.out.println("æ–¹æ³•ï¼š afterAdvice");
     }
     
-    //½«±»AroundAdviceµÄprocess·½·¨Æ¥Åä
+    //å°†è¢«AroundAdviceçš„processæ–¹æ³•åŒ¹é…
     public String aroundAdvice(String param1, Integer param2, Object param3) {
-        System.out.println("·½·¨£º aroundAdvice");
+        System.out.println("æ–¹æ³•ï¼š aroundAdvice");
         return param1;
     }
     
-    //½«±»AdviceTestµÄ¸÷ÖÖ·½·¨Æ¥Åä
+    //å°†è¢«AdviceTestçš„å„ç§æ–¹æ³•åŒ¹é…
     public String manyAdvices(String param1, String param2) {
-        System.out.println("·½·¨£ºmanyAdvices");
-        return param1 + " ¡¢ " + param2;
+        System.out.println("æ–¹æ³•ï¼šmanyAdvices");
+        return param1 + " ã€ " + param2;
     }
     
-    //½«±»AccessArgAdviceTestµÄaccess·½·¨Æ¥Åä
+    //å°†è¢«AccessArgAdviceTestçš„accessæ–¹æ³•åŒ¹é…
     public String accessAdvice(Date d, String n) {
-        System.out.println("·½·¨£ºaccessAdvice");
+        System.out.println("æ–¹æ³•ï¼šaccessAdvice");
         return "aa";
     }
 }
