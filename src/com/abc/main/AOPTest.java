@@ -15,7 +15,7 @@ public class AOPTest {
         //manager.beforeAdvice();
         //manager.afterReturning();
         //manager.afterThrowing();
-        //manager.afterAdvice();
+        //manager.afterAdvice("kaixuan");
         //String result = manager.aroundAdvice("aa", 1, "bb");
         //System.out.println("返回值：" + result);
         //String result = manager.manyAdvices("aa", "bb");
